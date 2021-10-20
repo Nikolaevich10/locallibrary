@@ -19,8 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
 
+import catalog
+from catalog import views
+
+app_name = catalog
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('help/', views.contact_form, name='help'),
 ]
 
 urlpatterns += [
