@@ -19,8 +19,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
 
-import catalog
-from catalog import views
+from locallibrary import catalog
+from locallibrary.catalog import views
 
 app_name = catalog
 
@@ -30,7 +30,7 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path('catalog/', include('catalog.urls')),
+    path('catalog/', include('locallibrary.catalog.urls')),
     path('', RedirectView.as_view(url='/catalog/', permanent=True)),
 ]
 
